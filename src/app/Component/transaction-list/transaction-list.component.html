@@ -1,0 +1,203 @@
+<section class="full-page">
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      @font-face {
+        font-family: 'IranSans';
+        src: url("/src/assets/font.scss" );
+        src: url("/src/assets/font.scss" ) format('embedded-opentype'),
+        url("/src/assets/font.scss") format('woff2'),
+        url("/src/assets/font.scss") format('woff'),
+        url("/src/assets/font.scss") format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: 'IranSans', sans-serif;
+        direction: rtl;
+      }
+      .input-group {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .input-group .form-control {
+        flex-grow: 1;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <p class="txt-me">کاربر گرامی لطفا بازه زمانی را تعیین کنید</p>
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            body {
+              direction: rtl;
+            }
+
+            .input-group {
+              display: flex;
+              flex-wrap: nowrap;
+            }
+
+            .input-group .form-control {
+              flex-grow: 1;
+              margin-left: 10px;
+            }
+          </style>
+        </head>
+        <body>
+        <div class="container ">
+          <div class="row mobile">
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12">
+              <label class="text date">از تاریخ :</label>
+              <input class="" type="text" placeholder="1402-12-01T00:00:00" [formControl]="from_date" />
+              <!--                <label class="date">از تاریخ:</label>-->
+              <!--                <input class="" type="text" [formControl]="from_date" />-->
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12">
+
+              <label class="text date">تا تاریخ</label>
+              <input class="" type="text" placeholder="1402-12-29T23:59:00" [formControl]="to_date" />
+              <!--                <label class="date">تا تاریخ:</label>-->
+              <!--                <input type="text" [formControl]="to_date" />-->
+
+            </div>
+
+          </div>
+          <div class="row mobile">
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12">
+              <label class="text date">پذیرنده :</label>
+              <input type="text" placeholder="3000" [formControl]="acceptor_tag_list" />
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12">
+              <label class="text date">تگ :</label>
+              <input class="" type="text" placeholder="100000" [formControl]="tag_list" />
+            </div>
+
+
+          </div>
+          <div class="row mobile">
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12">
+              <label class="text date">صفحات :</label>
+              <input type="text" placeholder="1" [formControl]="page_no" />
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12">
+              <label class="text date">مقدار :</label>
+              <input class="" type="text" placeholder="120" [formControl]="count" />
+            </div>
+
+            <div class="col-xl-1 col-lg-1 col-sm-12 col-md-12">
+              <button class="btn btn-primary" (click)="validateDateRange()">تایید</button>
+            </div>
+          </div>
+
+
+        </div>
+        <div>
+          <table [dataSource]="dataSource" mat-table >
+
+            <ng-container matColumnDef="account_no">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> شماره حساب </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.account_no}} </td>
+            </ng-container>
+            <ng-container matColumnDef="create_date">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> تاریخ و زمان تراکنش </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.create_date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="amount">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef>مبلغ </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.amount}} </td>
+            </ng-container>
+            <ng-container matColumnDef="terminal_id">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> شماره ترمینال</th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.terminal_id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="merchant_id">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> شماره پذیرنده </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.merchant_id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="status_type">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef>نوع وضعیت تراکنش </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.status_type}} </td>
+            </ng-container>
+            <ng-container matColumnDef="person_id">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> شماره پرسنلی </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.person_id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="first_name">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef>نام شخص </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="last_name">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> نام خانوادگی شخص </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="nation_code">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> کدملی</th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.nation_code}} </td>
+            </ng-container>
+            <ng-container matColumnDef="trn_type">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> نوع تراکنش </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.trn_type}} </td>
+            </ng-container>
+            <ng-container matColumnDef="issuer">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> صادر کننده </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.issuer}} </td>
+            </ng-container>
+            <ng-container matColumnDef="acceptor">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> نام پذیرنده </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.acceptor}} </td>
+            </ng-container>
+            <ng-container matColumnDef="create_time_f">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> زمان تراکنش </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.create_time_f}} </td>
+            </ng-container>
+            <ng-container matColumnDef="create_date_f">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> تاریخ تراکنش </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.create_date_f}} </td>
+            </ng-container>
+            <ng-container matColumnDef="response_description">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> شرح وضعیت درخواست </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.response_description}} </td>
+            </ng-container>
+            <ng-container matColumnDef="balance">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> موجودی</th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.balance}} </td>
+            </ng-container>
+            <ng-container matColumnDef="stan">
+              <th class="headtxt" mat-header-cell *matHeaderCellDef> کد مرجع </th>
+              <td class="valutxt" mat-cell *matCellDef="let element"> {{element.stan}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator class="paginatorme"  [pageSizeOptions]="[10]"
+                         showFirstLastButtons
+                         aria-label="Select page of periodic elements">
+          </mat-paginator>
+
+        </div>
+        </body>
+        </html>
+      </div>
+    </div>
+    <div >
+    </div>
+  </div>
+  </body>
+  </html>
+</section>
+
+
