@@ -1,6 +1,6 @@
 table {
   width: 100%;
-
+  font-family: 'IranSans', sans-serif;
 }
 
 button {
@@ -87,11 +87,12 @@ button:active {
 table {
   width: 100%;
 }
-
 .paginatorme{
   direction: ltr;
   }
-
+.fo-table{
+  font-family: 'IranSans', sans-serif;
+}
 
 @media (max-width: 1180px) {
   .mobile-hidden {

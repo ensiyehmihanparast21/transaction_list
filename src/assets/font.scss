@@ -1,6 +1,11 @@
 @font-face {
-  font-family: 'IRANSansWeb';
-  src: url(/src/assets/fonts/iranSans/IRANSansWeb_Light.woff)
-
+  font-family: 'IranSans';
+  src: url("/src/assets/font.scss");
+  src: url("/src/assets/font.scss") format('embedded-opentype'),
+  url("/src/assets/font.scss") format('woff2'),
+  url("/src/assets/font.scss") format('woff'),
+  url("/src/assets/font.scss") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
