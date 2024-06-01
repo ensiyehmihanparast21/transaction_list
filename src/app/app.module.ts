@@ -13,7 +13,6 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FooterComponent,
     HomeComponent,
     TransactionListComponent,
-      ],
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,6 +31,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

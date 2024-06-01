@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ShebaInquiry1": {
+    "transaction-list": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ShebaInquiry1",
+            "outputPath": "dist/transaction-list",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -35,8 +35,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "/src/assets/font.scss",
-               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -81,10 +80,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ShebaInquiry1:build:production"
+              "browserTarget": "transaction-list:build:production"
             },
             "development": {
-              "browserTarget": "ShebaInquiry1:build:development"
+              "browserTarget": "transaction-list:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ShebaInquiry1:build"
+            "browserTarget": "transaction-list':build"
           }
         },
         "test": {
@@ -116,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "ShebaInquiry1"
+  "defaultProject": "transaction-list"
 }
