@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  font-family: 'IranSans', sans-serif;
 
 }
 
@@ -9,6 +10,7 @@ button {
     left:0;
   }
   background-color: #4caf50;
+  font-family: 'IranSans', sans-serif;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -21,14 +23,17 @@ button {
 
 button:hover {
   background-color: #45a049;
+  font-family: 'IranSans', sans-serif;
 }
 
 button:active {
  background-color: #3d8b40;
+  font-family: 'IranSans', sans-serif;
 }
 .full-page {
   width: 100%;
   height: 100%;
+  font-family: 'IranSans', sans-serif;
 }
 
 
@@ -40,16 +45,19 @@ button:active {
   color: blue;
   margin-top: 33px;
   margin-right: 32px;
+  font-family: 'IranSans', sans-serif;
 }
 
 .span-txt{
   font-size: 16px;
   color: darkblue;
+  font-family: 'IranSans', sans-serif;
 }
 
 .date {
     position: relative;
     right: -10px;
+  font-family: 'IranSans', sans-serif;
  }
 
 @media screen and (min-width: 280px) and (max-width: 1200px) {
@@ -64,6 +72,7 @@ button:active {
   font-size: 12px;
   text-align: center;
   background-color: cadetblue;
+  font-family: 'IranSans', sans-serif;
 }
 .valutxt{
   font-size: 12px;
@@ -73,6 +82,7 @@ button:active {
 .tbl{
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: 'IranSans', sans-serif;
 }
 
 
@@ -90,5 +100,6 @@ table {
 
 .paginatorme{
   direction: ltr;
+  font-family: 'IranSans', sans-serif;
   }
 
