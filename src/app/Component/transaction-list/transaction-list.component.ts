@@ -29,6 +29,10 @@ export class TransactionListComponent implements AfterViewInit {
   acceptor_tag_list = new FormControl();
   tag_list = new FormControl();
   isChecking = false;
+  sumcount:any;
+  sumbalance:any;
+  sumamount:any;
+
   constructor(private TransactionListService: TransactionListService,private cdr: ChangeDetectorRef) { }
 
   validateDateRange() {
@@ -55,6 +59,10 @@ export class TransactionListComponent implements AfterViewInit {
           this.cdr.detectChanges();
           console.log('ds', this.dataSource.data);
           console.log( 'trans',this.transaction_list);
+          // محاسبه سرجمع مبلغ و موجودی
+          this.sumcount = this.transaction_list.transaction_list.length;
+          this.sumbalance = this.transaction_list.transaction_list.reduce((acc: any, trn: { balance: any; }) => acc + trn.balance, 0);
+          this.sumamount = this.transaction_list.transaction_list.reduce((acc: any, trn: { amount: any; }) => acc + trn.amount, 0);
 
           this.isChecking = true; // تغییر مقدار isChecking به false
         },

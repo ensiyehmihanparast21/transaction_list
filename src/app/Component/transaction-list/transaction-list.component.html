@@ -3,38 +3,12 @@
   <html>
   <head>
     <meta charset="UTF-8">
-<!--    <style>-->
-<!--      @font-face {-->
-<!--        font-family: 'IranSans';-->
-<!--        src: url("/src/assets/font.scss" );-->
-<!--        src: url("/src/assets/font.scss" ) format('embedded-opentype'),-->
-<!--        url("/src/assets/font.scss") format('woff2'),-->
-<!--        url("/src/assets/font.scss") format('woff'),-->
-<!--        url("/src/assets/font.scss") format('truetype');-->
-<!--        font-weight: normal;-->
-<!--        font-style: normal;-->
-<!--      }-->
-
-<!--      body {-->
-<!--        font-family: 'IranSans', sans-serif;-->
-<!--        direction: rtl;-->
-<!--      }-->
-<!--      .input-group {-->
-<!--        display: flex;-->
-<!--        flex-wrap: nowrap;-->
-<!--      }-->
-
-<!--      .input-group .form-control {-->
-<!--        flex-grow: 1;-->
-<!--        margin-left: 10px;-->
-<!--      }-->
-<!--    </style>-->
   </head>
   <body>
   <div class="row">
     <div class="col-12">
       <div>
-        <p class="txt-me">کاربر گرامی لطفا بازه زمانی را تعیین کنید</p>
+        <p class="txt-me">کاربر گرامی لطفا پارامترهای ورودی را تعیین و تایید نمایید.</p>
         <!DOCTYPE html>
         <html>
         <head>
@@ -101,8 +75,17 @@
               <button class="btn btn-primary" (click)="validateDateRange()">تایید</button>
             </div>
           </div>
-
-
+       </div>
+        <p class="txt-me"> کاربر گرامی ، پس از اعمال پارامترهای ورودی و تایید نهایی، سرجمع ها را مشاهده خواهید کرد.</p>
+        <div class="row mobile sumtbl justify-content-start">
+          <div class="col-xl-2 col-lg-2 col-sm-6 col-md-6 ">
+            <span class="text date sumtxt me-2">سرجمع مبلغ :</span>
+            <input type="text" class="form-control bg-white text-end sumtxt" value="{{ sumamount }}" readonly>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-sm-6 col-md-6  ">
+            <span class="text date sumtxt me-2">سرجمع موجودی :</span>
+            <input type="text" class="form-control bg-white text-end sumtxt" value="{{ sumbalance }}" readonly>
+          </div>
         </div>
         <div>
           <table [dataSource]="dataSource" mat-table >
@@ -182,14 +165,15 @@
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
+              </table>
+          <br>
+        </div>
           <mat-paginator class="paginatorme"  [pageSizeOptions]="[10]"
                          showFirstLastButtons
                          aria-label="Select page of periodic elements">
           </mat-paginator>
 
-        </div>
-        </body>
+           </body>
         </html>
       </div>
     </div>
