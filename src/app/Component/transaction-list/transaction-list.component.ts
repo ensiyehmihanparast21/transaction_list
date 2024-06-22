@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { TransactionListService } from 'src/app/Servises/TransactionList/transaction-list.service';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from '@angular/material/table';
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -72,9 +73,15 @@ export class TransactionListComponent implements AfterViewInit {
         }
       );
   }
+  exportToExcel() {
+    // Create a new workbook and worksheet
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(this.transaction_list.transaction_list);
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Transactions');
 
-
-
+    // Generate the Excel file
+    XLSX.writeFile(workbook, 'transactions.xlsx');
+  }
 }
 
 

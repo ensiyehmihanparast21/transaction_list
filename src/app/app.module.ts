@@ -13,6 +13,7 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,

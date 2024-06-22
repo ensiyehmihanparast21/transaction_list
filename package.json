@@ -43,6 +43,7 @@
     "ng-persian-datepicker": "^6.1.2",
     "ng2-charts": "^2.4.2",
     "ngx-clipboard": "^15.0.1",
+    "ngx-export-as": "^1.16.0",
     "ngx-image-cropper": "^2.0.2",
     "ngx-order-pipe": "^2.2.0",
     "ngx-pagination": "^6.0.3",
@@ -52,6 +53,7 @@
     "rxjs": "^7.4.0",
     "rxjs-compat": "^6.6.7",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "^0.11.4"
   },
   "devDependencies": {
